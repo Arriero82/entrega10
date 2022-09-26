@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Duster",
+    "price": "50000",
+    "thumbnail": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP._Sy4qWVmBwixA1glVhkTzgHaE8%26pid%3DApi&f=1",
+    "id": 1
+  },
+  {
+    "title": "RAM",
+    "price": "200000",
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_997702-MLA48793893569_012022-W.jpg",
+    "id": 2
+  },
+  {
+    "title": "Corolla",
+    "price": "20000",
+    "thumbnail": "https://cdn.motor1.com/images/mgl/qnP2R/s3/oficial-todo-sobre-el-nuevo-toyota-corolla-hybrid-llega-este-verano-a-la-argentina.jpg",
+    "id": 3
+  }
+]
