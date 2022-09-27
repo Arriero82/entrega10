@@ -8,8 +8,7 @@ router.get("/", async (req, res) => {
   prod = await products.getAll();
   try {
     //res.send(prod);
-    res.render('main', {layout: 'layout1',prod})
-    console.log(prod);
+    res.status(200).render('main', {layout: 'layout1',prod})
   } catch (error) {
     res.send([]);
   }
@@ -27,12 +26,12 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const prod = await products.save(req.body);
-  const prod2 = await products.getById(prod.length);
-  const { title, price, id } = prod2[0];
-  res.send(`producto guardado 
-  item: ${title} 
-  precio: ${price} 
-  ID# ${id}`);
+  try {
+    res.status(201).redirect('/productos')
+  } catch (error) {
+    res.send([])
+  }
+  
 });
 
 router.put("/:id", async (req, res) => {

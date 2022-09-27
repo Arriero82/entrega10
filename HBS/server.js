@@ -10,11 +10,14 @@ app.engine('hbs', hbs.engine({
     defaultLayout: 'layout1.hbs'
 }))
 
+app.use(express.static(__dirname + '/public'))
+
 app.set('views', './views');
 app.set('view engine', 'hbs')
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 
 app.use('/productos/', products)
 
