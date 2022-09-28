@@ -1,6 +1,6 @@
 const express = require("express");
 const { Router } = express;
-const Products = require("../container/Container");
+const Products = require("../../container/Container");
 const products = new Products("../database/file.json");
 const router = Router();
 
@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
   prod = await products.getById(id);
   try {
-    res.send(prod);
+    res.status(200).render('main', {layout: 'layout1',prod})
   } catch (error) {
     res.send([]);
   }

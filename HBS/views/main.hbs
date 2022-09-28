@@ -1,13 +1,16 @@
 <h2>Listado de productos</h2>
-
+    
 {{#if prod}}
-<ul class="products">
+<div class="products">
   {{#each prod}}
-    <ul><h3>{{this.title}}</h3></ul> 
-    <ul><h3>{{this.price}}</h3></ul>
-    <ul><img src="{{this.thumbnail}}" alt="{{this.title}}"></ul>
+  <div class="articulos">
+    <h3>Modelo {{this.title}}</h3>
+    <h3>Precio ${{this.price}}</h3> 
+    <img src="{{this.thumbnail}}" alt="{{this.title}}">
+  </div>
   {{/each}}
-</ul>
+</div>
+
 {{else}}
 <p>NO SE ENCONTRARON PRODUCTOS</p>
 {{/if}}

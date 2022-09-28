@@ -1,7 +1,39 @@
-h1{
-    color: blue;    
+h1 {
+  font-size: 50px;
 }
 
-.products{
-    color: white;
+h2 {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.articulos{
+    color: blue;
+    text-align: center; 
+    padding: 20px;
+}
+
+.articulos img {
+  max-width: 500px;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+.form {
+  text-align: left;
+  font-size: 20px;
+  margin: 20px;
+}
+
+.form label,
+input {
+  margin: 5px;
 }
