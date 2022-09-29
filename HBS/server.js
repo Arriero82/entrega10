@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use('/productos/', products)
+app.use('/', products)
 
 const PORT = 8080;
 const server = app.listen(PORT, () => {

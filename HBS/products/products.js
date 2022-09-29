@@ -4,17 +4,25 @@ const Products = require("../../container/Container");
 const products = new Products("../database/file.json");
 const router = Router();
 
-router.get("/", async (req, res) => {
-  prod = await products.getAll();
+router.get('/productos', async (req, res) => {
+  const prod = await products.getAll();
   try {
-    //res.send(prod);
     res.status(200).render('main', {layout: 'layout1',prod})
   } catch (error) {
     res.send([]);
+  } 
+});
+
+router.post('/', async (req, res) => {      
+  const prod = await products.save(req.body);
+  try {
+    res.status(200).redirect('/productos')
+  } catch (error) {
+    res.send([])
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/productos/:id", async (req, res) => {
   const { id } = req.params;
   prod = await products.getById(id);
   try {
@@ -22,16 +30,6 @@ router.get("/:id", async (req, res) => {
   } catch (error) {
     res.send([]);
   }
-});
-
-router.post("/", async (req, res) => {
-  const prod = await products.save(req.body);
-  try {
-    res.status(201).redirect('/productos')
-  } catch (error) {
-    res.send([])
-  }
-  
 });
 
 router.put("/:id", async (req, res) => {
