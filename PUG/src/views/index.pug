@@ -7,8 +7,10 @@ html
         
         a(href= "/")| Ir a cargar un nuevo producto 
         div(class='products')
-            each producto in prod.length ? prod : ['NO SE ENCONTRARON PRODUCTOS']
+            each producto in prod
                 div(class="articulos")
                     h3= producto.title
                     h3= producto.price
                     img(src= producto.thumbnail)
+            else
+                p NO SE ENCONTRARON PRODUCTOS

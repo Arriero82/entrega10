@@ -11,7 +11,7 @@
     <h2>Listado de productos</h2>
     <a href="/" type="button">Ir a cargar un nuevo producto</a>
 
-    <% if(prod){ %>
+    <% if(prod.length > 0){ %>
     <div class="products">
       <% prod.forEach(function(producto){ %>
       <div class="articulos">
@@ -22,7 +22,7 @@
       <% }) %>
     </div>
     <% }else{ %>
-    <p>NO SE ENCONTRARON PRODUCTOS</p>
+        <p>NO SE ENCONTRARON PRODUCTOS</p>
     <% } %>
   </body>
 </html>
