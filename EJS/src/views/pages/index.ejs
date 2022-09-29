@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>EJS</title>
+  </head>
+  <body>
+    <h2>Listado de productos</h2>
+    <a href="/" type="button">Ir a cargar un nuevo producto</a>
+
+    <% if(prod){ %>
+    <div class="products">
+      <% prod.forEach(function(producto){ %>
+      <div class="articulos">
+        <h3>Modelo <%= producto.title %></h3>
+        <h3>Precio <%= producto.price %></h3>
+        <img src="<%= producto.thumbnail %>" alt="<%= producto.title %>" />
+      </div>
+      <% }) %>
+    </div>
+    <% }else{ %>
+    <p>NO SE ENCONTRARON PRODUCTOS</p>
+    <% } %>
+  </body>
+</html>
